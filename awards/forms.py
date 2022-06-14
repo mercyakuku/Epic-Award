@@ -28,3 +28,8 @@ class WebsitePostForm(forms.ModelForm):
         model = Post
         fields = ('name', 'landing_image',
                   'screenshot_1', 'screenshot_2', 'screenshot_3', 'screenshot_4', 'description', 'site_link', 'country')        
+
+class LocationForm(forms.ModelForm):
+    class Meta:
+        model = Location
+        exclude = ['user', 'post', 'state', 'zipcode', 'address']                  
