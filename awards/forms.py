@@ -21,3 +21,10 @@ class MyRegistrationForm(UserCreationForm):
         user.save()
 
         return user
+
+class WebsitePostForm(forms.ModelForm):
+
+    class Meta:
+        model = Post
+        fields = ('name', 'landing_image',
+                  'screenshot_1', 'screenshot_2', 'screenshot_3', 'screenshot_4', 'description', 'site_link', 'country')        
