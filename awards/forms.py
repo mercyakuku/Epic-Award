@@ -51,5 +51,8 @@ class RatePostForm(forms.ModelForm):
     class Meta:
         model = Rating
         exclude = ['user', 'post']   
-        
-                  
+
+class ReviewCommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        exclude = ['author', 'post']                  
