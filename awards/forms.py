@@ -45,4 +45,11 @@ class ProfileForm(forms.ModelForm):
         model = Profile
         exclude = ['user', 'is_judge', 'is_pro',
                    'is_chief', 'is_tribe', 'user_address']
-        list_display = []              
+        list_display = []   
+        
+class RatePostForm(forms.ModelForm):
+    class Meta:
+        model = Rating
+        exclude = ['user', 'post']   
+        
+                  
