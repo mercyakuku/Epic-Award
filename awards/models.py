@@ -278,3 +278,10 @@ class PostLikes(models.Model):
     user = models.ForeignKey(User, related_name='liked_posts', null=True)
     post_date = models.DateTimeField(auto_now_add=True, null=True)
     post = models.ForeignKey(Post, related_name='likes', null=True)          
+
+class CommentsLikes(models.Model):
+    user = models.ForeignKey(User, related_name='liked_by', null=True)
+    post_date = models.DateTimeField(auto_now_add=True, null=True)
+    comment = models.ForeignKey(Comment, related_name='likes', null=True)
+    
+        
