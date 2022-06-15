@@ -267,4 +267,9 @@ class Comment(models.Model):
     author = models.ForeignKey(User, related_name='comments', null=True)
     post = models.ForeignKey(Post, related_name='comments', null=True)
     post_date = models.DateTimeField(auto_now_add=True, null=True)
-    review = models.TextField(null=True, blank=True)      
+    review = models.TextField(null=True, blank=True)   
+
+class Collection(models.Model):
+    user = models.ForeignKey(User, related_name='collections', null=True)
+    post_date = models.DateTimeField(auto_now_add=True, null=True)
+    post = models.ForeignKey(Post)       
