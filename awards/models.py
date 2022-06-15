@@ -272,4 +272,9 @@ class Comment(models.Model):
 class Collection(models.Model):
     user = models.ForeignKey(User, related_name='collections', null=True)
     post_date = models.DateTimeField(auto_now_add=True, null=True)
-    post = models.ForeignKey(Post)       
+    post = models.ForeignKey(Post) 
+
+class PostLikes(models.Model):
+    user = models.ForeignKey(User, related_name='liked_posts', null=True)
+    post_date = models.DateTimeField(auto_now_add=True, null=True)
+    post = models.ForeignKey(Post, related_name='likes', null=True)          
