@@ -253,12 +253,12 @@ class Followers(models.Model):
     def __str__(self):
         return f'{self.follower.username} is now following {self.following.username}'        
 
-class tags(models.Model):
+class Tags(models.Model):
     post = models.ForeignKey(Post, related_name='tags', null=True)
     post_date = models.DateTimeField(auto_now_add=True, null=True)
     tag = models.CharField(max_length=50, null=True)
 
-class technologies(models.Model):
+class Technologies(models.Model):
     post = models.ForeignKey(Post, related_name='technologies', null=True)
     post_date = models.DateTimeField(auto_now_add=True, null=True)
     tag = models.CharField(max_length=50, null=True)  
@@ -283,5 +283,4 @@ class CommentsLikes(models.Model):
     user = models.ForeignKey(User, related_name='liked_by', null=True)
     post_date = models.DateTimeField(auto_now_add=True, null=True)
     comment = models.ForeignKey(Comment, related_name='likes', null=True)
-    
-        
+
