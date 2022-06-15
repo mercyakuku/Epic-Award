@@ -261,4 +261,10 @@ class tags(models.Model):
 class technologies(models.Model):
     post = models.ForeignKey(Post, related_name='technologies', null=True)
     post_date = models.DateTimeField(auto_now_add=True, null=True)
-    tag = models.CharField(max_length=50, null=True)    
+    tag = models.CharField(max_length=50, null=True)  
+
+class Comment(models.Model):
+    author = models.ForeignKey(User, related_name='comments', null=True)
+    post = models.ForeignKey(Post, related_name='comments', null=True)
+    post_date = models.DateTimeField(auto_now_add=True, null=True)
+    review = models.TextField(null=True, blank=True)      
